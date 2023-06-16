@@ -1,0 +1,194 @@
+/* Reset Styles */
+*{
+    padding: 0;
+    margin:  0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.text-read{
+    overflow: hidden;
+    z-index: 1000;
+    padding: 13px;
+    margin: 13px;
+    
+
+    text-align: left;
+    color: #DB5A46;
+    font-size: 23px;
+    text-shadow: -2px -2px 1px #bc3333, 2px 2px 1px #cf5530, -2px 2px 1px #bc3333, 2px -2px 1px #bc3333;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.titles{
+    z-index: 100;
+    overflow: hidden;
+    padding: 7px;
+    margin: 7px;
+
+    text-align: center;
+    color: #3CCBDB;
+
+    letter-spacing: 7px;
+    text-shadow: -2px -2px 1px #3b5bc4, 2px 2px 1px #5175eb, -2px 2px 1px #3b5bc4, 2px -2px 1px #5175eb;
+
+    font-size: 23px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+body{
+    background-color: #8F4135;
+    min-height: 170vh;
+}
+
+/* Definir Estilos para efecto Hover en las imágenes. */
+.contenedor{
+	margin: 7px;
+    padding: 7px;
+    width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 88vh;
+}
+
+.contenedor figure{
+	position: relative;
+	width: 854px;
+    height: 480px;
+	overflow: hidden;
+	border-radius: 17px;
+	box-shadow: 0px 2px 7px rgba(0,0,0,0.30);
+	/* cursor: pointer; */
+}
+
+.contenedor figure img{
+	width: 100%;
+	height: 100%;
+	transition: all 256ms ease-out;
+}
+
+.contenedor figure .capa{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(82,31,173,0.5);
+	transition: all 256ms ease-out;	
+	opacity: 0;
+	visibility: hidden;
+	text-align: right;
+}
+
+.contenedor figure:hover > .capa{
+	opacity: 1;
+	visibility: visible;
+}
+
+.contenedor figure:hover > .capa h3{
+	margin-top: 70px;
+	margin-bottom: 19px;
+}
+
+.contenedor figure .capa h3{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 37px;
+    text-align: center;
+	margin-top: 70px;
+	margin-bottom: 19px;
+	color: #DBA430;
+    text-shadow: -2px -2px 1px #bc3333, 2px 2px 1px #cf5530, -2px 2px 1px #bc3333, 2px -2px 1px #bc3333;
+	font-weight: 400px;
+	margin-bottom: 10px;
+	margin-top: 17px;
+	transition: all 256ms ease-out;	
+}
+
+.contenedor figure .capa p{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left;
+	color: #FFF87A;
+    text-shadow: -2px -2px 1px #bc3333, 2px 2px 1px #cf5530, -2px 2px 1px #bc3333, 2px -2px 1px #bc3333;
+
+	font-size: 27px;
+	line-height: 2;
+	width: 100%;
+	max-width: 600px;
+	margin: auto;
+}
+
+.contenedor figure:hover > img{
+	transform: scale(1.5);
+}
+
+/* ESTILOS PARA EL BOTÓN DEL LINK */
+.zelda{
+    text-align: center;
+    margin: 27px;
+    padding: 27px;
+    font-size: 23px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: #965FFA;
+    color: #F23030;
+    z-index: 99;
+    border-radius: 10px;
+    transition: all 224ms ease 0ms;
+    border-color: #965FFA
+}
+.zelda:hover{
+    text-align: center;
+    margin: 27px;
+    padding: 27;
+    font-size: 23px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 27px;
+    background-color: #FAF25F;
+    color: #ADA731;
+	transform: translateX(17px);
+    border-color: #ADA731;
+}
+
+/* Background Movement */
+.container{
+    position: static;
+    width: 100%;
+    height: 190vh; 
+}
+
+.bubbles{
+    position: relative;
+    display: flex;
+    z-index: -10;
+}
+
+.bubbles span{
+    overflow: hidden;
+    position: relative;
+    width: 37px;
+    height: 37px;
+    background: #fbbf5f;
+    margin: 0 17px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 7px #f56e48,
+    0 0 70px #9ca723,
+    0 0 120px #f35247;
+    animation: animate 17s linear infinite;
+    animation-duration: calc(640s / var(--i));
+}
+
+.bubbles span:nth-child(even){
+    background: #fb5f95;
+    box-shadow: 0 0 0 7px #f5485f,
+    0 0 70px #a7233d,
+    0 0 120px #f34747;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(190vh) scale(0.2);
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }    
+}
